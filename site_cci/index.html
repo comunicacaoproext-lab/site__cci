@@ -905,11 +905,10 @@
     <script>
         // Dados de Mockup para Projetos (AJUSTADO para total de 47)
         const PROJECTS_DATA = [
-            // 18x DESIGN
-            { id: 1, title: "Identidade Visual PROEXT", category: "DESIGN", subcategory: "Identidade Visual" },
-            { id: 4, title: "Website CCI Redesign", category: "DESIGN", subcategory: "Web Design" },
-            { id: 8, title: "Logotipo Novo Projeto", category: "DESIGN", subcategory: "Identidade Visual" },
-            { id: 11, title: "Peça Social Media A", category: "DESIGN", subcategory: "Mídias Sociais" },
+            // 18x DESIGN - ADICIONADO imageUrl (Opcional)
+            { id: 1, title: "Mockup Ecomangue", category: "DESIGN", subcategory: "Identidade Visual", imageUrl: "assets/mockup-geral-ECOMANGUE.PNG" }, // Adicione o caminho da imagem aqui, ex: "assets/img_design_1.jpg"
+            { id: 4, title: "Mockup Pise", category: "DESIGN", subcategory: "Identidade Visual", imageUrl: "assets/mockup-geral-PISE.png" },
+            { id: 8, title: "Mockup LTM", category: "DESIGN", subcategory: "Identidade Visual", imageUrl: "assets/mockup-geral-LTM.png" },
             
             // 15x AUDIOVISUAL - ADICIONADO videoId (Exemplos do YouTube)
             // Substitua os videoId pelos códigos reais dos vídeos do Youtube (aquilo que vem depois de ?v=)
@@ -917,29 +916,29 @@
                 id: 2, 
                 title: "Vídeo Institucional", 
                 category: "AUDIOVISUAL", 
-                subcategory: "Conheça e participe da extensão e cultura da UFPE", 
+                subcategory: "Extensão além da sala de aula", 
                 videoId: "XmZYS8EalPs" 
             },
             { 
                 id: 5, 
-                title: "Extensão em ação", 
+                title: "Viva a extensão", 
                 category: "AUDIOVISUAL", 
                 subcategory: "Série documental sobre Extensão na UFPE", 
                 videoId: "A3_BCbY_yPE" 
             },
             { 
                 id: 7, 
-                title: "Curricularizacão da Extensão ", 
+                title: "Extensão em ação ", 
                 category: "AUDIOVISUAL", 
-                subcategory: "Você sabe qual é o papel das Ações de Extensão na universidade?", 
+                subcategory: "Boletim semanal com notícias da Extensão", 
                 videoId: "1lShTpILhE4" 
             },
             { 
                 id: 10, 
-                title: "Tutoriais", 
+                title: "Curricularizacão", 
                 category: "AUDIOVISUAL", 
-                subcategory: "QKazAiNbFn8", 
-                videoId: "QKazAiNbFn8" 
+                subcategory: "Como a extensão integra a formação dos estudantes.", 
+                videoId: "2uxVp6Ft2P4" 
             },
         
             // 14x EDITORIAL
@@ -982,7 +981,7 @@
             // Preenche os dados
             document.getElementById('modal-project-title').textContent = project.title;
             document.getElementById('modal-project-category').textContent = `${project.category} - ${project.subcategory}`;
-            document.getElementById('modal-project-description').textContent = `Detalhes completos sobre o projeto "${project.title}". Este projeto foi desenvolvido com foco em excelência e impacto na comunicação da extensão universitária.`;
+            document.getElementById('modal-project-description').textContent = `Detalhes sobre "${project.title}". Este projeto foi desenvolvido com foco em excelência e impacto na comunicação da extensão universitária.`;
 
             // Obtém o elemento grid da galeria
             const galleryGrid = document.getElementById('modal-gallery-grid');
@@ -1023,13 +1022,29 @@
                 // Re-inicializa os ícones Lucide para o novo conteúdo inserido
                 if (window.lucide) lucide.createIcons();
 
+            } else if (project.category === 'DESIGN') {
+                // --- LOGICA PARA DESIGN (IMAGEM ÚNICA) ---
+                galleryGrid.className = "w-full flex justify-center";
+                
+                // Pega a imagem do projeto ou usa um placeholder
+                // Use a cor vermelha para placeholder de Design
+                const imgUrl = project.imageUrl || `https://placehold.co/800x600/8B0000/ffffff?text=${encodeURIComponent(project.title)}`;
+
+                galleryGrid.innerHTML = `
+                    <div class="w-full max-w-4xl">
+                        <img src="${imgUrl}" 
+                             alt="${project.title}" 
+                             class="w-full h-auto max-h-[70vh] object-contain rounded-lg shadow-lg border border-gray-200" 
+                        />
+                    </div>
+                `;
+
             } else {
-                // --- LOGICA ORIGINAL PARA OUTROS PROJETOS (IMAGENS) ---
+                // --- LOGICA ORIGINAL PARA OUTROS PROJETOS (EDITORIAL - GRID 4 IMAGENS) ---
                 // Restaura as classes de grid original
                 galleryGrid.className = "grid grid-cols-1 sm:grid-cols-2 gap-4";
 
                 const colorMap = {
-                    'DESIGN': '8B0000', // Red
                     'EDITORIAL': '388e3c', // Green
                 };
                 const color = colorMap[project.category] || '555555';
@@ -1159,6 +1174,11 @@
                 // Se for audiovisual e tiver ID, usa a thumb do YouTube
                 if (project.category === 'AUDIOVISUAL' && project.videoId) {
                     imageUrl = `https://img.youtube.com/vi/${project.videoId}/maxresdefault.jpg`;
+                }
+                
+                // Se for Design e tiver imagem customizada
+                if (project.category === 'DESIGN' && project.imageUrl) {
+                    imageUrl = project.imageUrl;
                 }
 
                 // ADICIONADO: onclick event e cursor-pointer
