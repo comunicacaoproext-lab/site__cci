@@ -94,14 +94,11 @@
             /* Removido overflow: visible; para esconder slides */
         }
         .carousel-item {
-
-
             width: 100%;
             flex-shrink: 0;
             padding: 0.5rem; /* Reduzido o padding interno do slide */
         }
         
-
 
         /* --- CSS para o Carrossel de Imagens do HERO --- */
         .hero-background-slide {
@@ -171,6 +168,10 @@
         }
         
         /* Otimizando classes CSS antigas que não são mais necessárias após a mudança do fluxo */
+        
+        /* NOVO: Classe para esconder a barra de rolagem (usada nos botões de projeto no mobile) */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <body class="pt-[90px] lg:pt-[100px] scroll-smooth"> 
@@ -237,12 +238,14 @@
         
         <!-- Conteúdo -->
         <div class="relative z-10 text-center px-4 max-w-4xl mx-auto py-20">
-            <h1 class="text-5xl md:text-6xl lg:text-6xl font-bold mb-6 font-display animate-fade-in-up">
+            <!-- AJUSTE: Reduzindo o tamanho do título de 5XL para 4XL no mobile e garantindo quebra de linha suave -->
+            <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-6xl font-bold mb-6 font-display animate-fade-in-up leading-tight">
                 Criatividade com propósito:<br>
                 comunicar para transformar
             </h1>
             
-            <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+            <!-- AJUSTE: Reduzindo o parágrafo de text-lg para text-base no mobile -->
+            <p class="text-base sm:text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
                 Somos especialistas em comunicação estratégica, design e projetos que geram impacto real
             </p>
             
@@ -255,10 +258,12 @@
         <div class="max-w-7xl mx-auto px-4 lg:px-8">
             
             <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-display">
+            <!-- AJUSTE: Reduzindo h2 de 4xl para 3xl no mobile -->
+            <h2 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 font-display">
                 Sobre Nós
             </h2>
-            <p class="text-lg text-gray-600 max-w-4xl mx-auto">
+            <!-- AJUSTE: Reduzindo o parágrafo de text-lg para text-base no mobile -->
+            <p class="text-sm sm:text-lg text-gray-600 max-w-4xl mx-auto">
                 Divididos em <b>três núcleos estratégicos</b>, atuamos de forma integrada para fortalecer a 
                 <b>comunicação institucional da extensão da UFPE</b>. Cada bureau desenvolve soluções especializadas que, 
                 juntas, constroem a identidade visual e narrativa da <b>extensão</b>, conectando a universidade com a sociedade.
@@ -321,10 +326,12 @@
             
             <!-- Título e Subtítulo -->
             <div class="text-center mb-10 md:mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-display">
+                <!-- AJUSTE: Reduzindo h2 de 4xl para 3xl no mobile -->
+                <h2 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 font-display">
                     Serviços
                 </h2>
-                <p class="text-lg text-gray-600 max-w-4xl mx-auto">
+                <!-- AJUSTE: Reduzindo o parágrafo de text-lg para text-base no mobile -->
+                <p class="text-sm sm:text-lg text-gray-600 max-w-4xl mx-auto">
                     Soluções completas em comunicação institucional, unindo design, conteúdo e audiovisual para fortalecer a presença da extensão universitária da UFPE.
                 </p>
                 <div class="w-24 h-1 bg-ufpe-red mx-auto mt-6"></div>
@@ -338,7 +345,7 @@
                     <div class="mb-4">
                         <i data-lucide="pen" class="w-10 h-10 text-ufpe-red"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-ufpe-red mb-2 uppercase tracking-wider">
+                    <h3 class="text-base font-bold text-ufpe-red mb-2 uppercase tracking-wider">
                         Social Media
                     </h3>
                     <p class="text-gray-700 text-sm mt-4 leading-relaxed mx-auto">
@@ -351,7 +358,7 @@
                     <div class="mb-4">
                         <i data-lucide="video" class="w-10 h-10 text-ufpe-red"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-ufpe-red mb-2 uppercase tracking-wider">
+                    <h3 class="text-base font-bold text-ufpe-red mb-2 uppercase tracking-wider">
                         Audiovisual
                     </h3>
                     <p class="text-gray-700 text-sm mt-4 leading-relaxed mx-auto">
@@ -364,7 +371,7 @@
                     <div class="mb-4">
                             <i data-lucide="star" class="w-10 h-10 text-ufpe-red"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-ufpe-red mb-2 uppercase tracking-wider">
+                    <h3 class="text-base font-bold text-ufpe-red mb-2 uppercase tracking-wider">
                             Design
                     </h3>
                     <p class="text-gray-700 text-sm mt-4 leading-relaxed mx-auto">
@@ -377,7 +384,7 @@
                     <div class="mb-4">
                         <i data-lucide="layers" class="w-10 h-10 text-ufpe-red"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-ufpe-red mb-2 uppercase tracking-wider">
+                    <h3 class="text-base font-bold text-ufpe-red mb-2 uppercase tracking-wider">
                         Editorial
                     </h3>
                     <p class="text-gray-700 text-sm mt-4 leading-relaxed mx-auto">
@@ -391,13 +398,15 @@
             <!-- Fundo removido (bg-white e shadow-lg), mantido border-gray-100 para separação -->
             <div class="max-w-6xl mx-auto mt-8 px-4 py-8 border border-gray-200 rounded-xl">
                 <div class="text-center mb-6">
-                    <h3 class="text-2xl font-bold text-ufpe-red mb-1 font-display">
+                    <!-- AJUSTE: Reduzindo h3 de 2xl para xl no mobile -->
+                    <h3 class="text-base sm:text-2xl font-bold text-ufpe-red mb-1 font-display">
                         Trilha de Solicitação
                     </h3>
-                    <p class="text-gray-600 text-sm max-w-xl mx-auto">Entenda como sua demanda é processada pela equipe da CCI.</p>
+                    <p class="text-sm sm:text-base text-gray-600 max-w-xl mx-auto">Entenda como sua demanda é processada pela equipe da CCI.</p>
                 </div>
                 
                 <!-- O FLUXO EM SI (AJUSTADO PARA NOVA RAMIFICAÇÃO) -->
+                <!-- Manter a estrutura de 4 colunas no mobile por se tratar de um infográfico linear curto -->
                 <div class="timeline-container relative">
                     <!-- Linha base cinza que vai de ponta a ponta -->
                     <div class="timeline-base-line"></div>
@@ -415,8 +424,8 @@
                     <div class="w-1/4 timeline-step">
                         <div class="timeline-icon-container w-14 h-14 bg-ufpe-red rounded-full flex items-center justify-center text-2xl mb-3 border-4 border-white shadow-lg">📧</div>
                         <div class="timeline-text">
-                            <p class="text-xs font-bold text-cinza_escuro">1. Envio</p>
-                            <p class="text-[0.6rem] text-gray-500 mt-1">E-mail para o Bureau Específico</p>
+                            <p class="text-xs lg:text-sm font-bold text-cinza_escuro">1. Envio</p>
+                            <p class="text-[0.6rem] lg:text-xs text-gray-500 mt-1">E-mail para o Bureau Específico</p>
                         </div>
                     </div>
 
@@ -424,8 +433,8 @@
                     <div class="w-1/4 timeline-step">
                         <div class="timeline-icon-container w-14 h-14 bg-ufpe-red rounded-full flex items-center justify-center text-2xl mb-3 border-4 border-white shadow-lg">🧑‍💻</div>
                         <div class="timeline-text">
-                            <p class="text-xs font-bold text-cinza_escuro">2. Avaliação</p>
-                            <p class="text-[0.6rem] text-gray-500 mt-1">Prioridade e Viabilidade</p>
+                            <p class="text-xs lg:text-sm font-bold text-cinza_escuro">2. Avaliação</p>
+                            <p class="text-[0.6rem] lg:text-xs text-gray-500 mt-1">Prioridade e Viabilidade</p>
                         </div>
                     </div>
 
@@ -433,8 +442,8 @@
                     <div class="w-1/4 timeline-step">
                         <div class="timeline-icon-container w-14 h-14 bg-bureau-green rounded-full flex items-center justify-center text-2xl mb-3 border-4 border-white shadow-lg">✅</div>
                         <div class="timeline-text">
-                            <p class="text-xs font-bold text-bureau-green">3. SIM (Aprovado)</p>
-                            <p class="text-[0.6rem] text-gray-500 mt-1">Início da Produção</p>
+                            <p class="text-xs lg:text-sm font-bold text-bureau-green">3. SIM (Aprovado)</p>
+                            <p class="text-[0.6rem] lg:text-xs text-gray-500 mt-1">Definição de prazo</p>
                         </div>
                     </div>
 
@@ -442,8 +451,8 @@
                     <div class="w-1/4 timeline-step">
                         <div class="timeline-icon-container w-14 h-14 bg-ufpe-red rounded-full flex items-center justify-center text-2xl mb-3 border-4 border-white shadow-lg">❌</div>
                         <div class="timeline-text">
-                            <p class="text-xs font-bold text-ufpe-red">3. NÃO (Não Alocado no Momento)</p>
-                            <p class="text-[0.6rem] text-gray-500 mt-1">Não contemplado na agenda atual</p>
+                            <p class="text-xs lg:text-sm font-bold text-ufpe-red">3. NÃO <span class="text-[0.6rem] lg:text-xs">(Não Alocado no Momento)</span></p>
+                            <p class="text-[0.6rem] lg:text-xs text-gray-500 mt-1">Não contemplado na agenda atual</p>
                         </div>
                     </div>
                 </div>
@@ -455,7 +464,8 @@
             <!-- Subseção de SOLICITAÇÃO E PRAZOS (CARROSSEL REESTRUTURADO) -->
             <!-- Fundo removido (bg-white e shadow-2xl), mantido border-gray-200/border -->
             <div class="mt-6 max-w-6xl mx-auto p-6 md:p-10 border border-gray-200 rounded-xl">
-                <h3 class="text-2xl font-bold text-cinza_escuro mb-6 border-b pb-2 font-display">
+                <!-- AJUSTE: Reduzindo h3 de 2xl para xl no mobile -->
+                <h3 class="text-2xl sm:text-3xl md:text-3xl lg:text-3xl font-bold text-cinza_escuro mb-6 border-b pb-2 font-display">
                     Prazos e Detalhes de Solicitação por Serviço
                 </h3>
                 
@@ -472,7 +482,7 @@
                             <div class="bg-gray-50 p-4 md:p-6 rounded-xl border-t-4 border-ufpe-red shadow-lg min-h-[300px]"> 
                                 <div class="flex items-center mb-4 border-b border-gray-200 pb-2">
                                     <i data-lucide="pen" class="w-6 h-6 text-ufpe-red mr-2"></i>
-                                    <h4 class="text-lg font-bold text-ufpe-red font-display">Divulgação de Notícias e Redes Sociais</h4>
+                                    <h4 class="text-base lg:text-xl font-bold text-ufpe-red font-display">Divulgação de Notícias e Redes Sociais</h4>
                                 </div>
                                 <div class="space-y-2"> <!-- Reduzido space-y-3 para space-y-2 -->
                                     <!-- Serviço 1 -->
@@ -480,34 +490,33 @@
                                         <p class="info-value font-semibold">Divulgação de notícias, postagens, editais e ações</p>
                                         <div class="grid grid-cols-2 mt-1">
                                             <div>
-                                                <span class="info-label">Complexidade:</span>
-                                                <p class="info-detail">Baixa</p>
+                                                <span class="info-label text-xs lg:text-sm">Complexidade</span>
+                                                <span class="info-detail text-xs lg:text-sm">Baixa</span>
+                
                                             </div>
                                             <div>
-                                                <span class="info-label">Prazo Estimado:</span>
-                                                <p class="info-detail">Até 1 a 2 dias úteis</p>
+                                                <span class="info-label  text-xs lg:text-sm">Prazo Estimado: </span>
+                                                <span class="info-detail text-xs lg:text-sm">Até 1 a 2 dias úteis</span>
                                             </div>
                                         </div>
-                                        <span class="info-label mt-2">Meio de Solicitação:</span>
+                                        <span class="info-label mt-2  text-xs lg:text-sm ">Meio de Solicitação:</span>
                                         <!-- Cor alterada para text-link-blue -->
-                                        <p class="info-detail">E-mail (<a href="mailto:comunicacao.proext@ufpe.br" class="text-link-blue hover:underline">comunicacao.proext@ufpe.br</a>)</p>
+                                        <span class="info-detail  text-xs lg:text-sm">E-mail (<a href="mailto:comunicacao.proext@ufpe.br" class="text-link-blue hover:underline">comunicacao.proext@ufpe.br</a>)</span>
                                     </div>
 
                                     <!-- Serviço 2 -->
                                     <div class="border-b pb-2">
-                                        <p class="info-value font-semibold">Criação de textos institucionais para site e redes sociais</p>
+                                        <p class="info-value font-semibold ">Criação de textos institucionais para site e redes sociais</p>
                                         <div class="grid grid-cols-2 mt-1">
                                             <div>
-                                                <span class="info-label">Complexidade:</span>
-                                                <p class="info-detail">Média</p>
+                                                <span class="info-label  text-xs lg:text-sm">Complexidade: Média</span>
                                             </div>
                                             <div>
-                                                <span class="info-label">Prazo Estimado:</span>
-                                                <p class="info-detail">Até 3 dias úteis</p>
+                                                <span class="info-label text-xs lg:text-sm">Prazo Estimado: Até 3 dias úteis</span>
                                             </div>
                                         </div>
-                                        <span class="info-label mt-2">Serviço Contínuo:</span>
-                                        <p class="info-detail">Monitoramento das mídias de comunicação (N/A para solicitação)</p>
+                                        <span class="info-label mt-2 text-xs lg:text-sm">Serviço Contínuo:</span>
+                                        <span class="info-detail text-xs lg:text-sm">Monitoramento das mídias de comunicação (N/A para solicitação)</span>
                                     </div>
                                     
                                 </div>
@@ -523,9 +532,9 @@
                                 </div>
                                 <div class="space-y-2"> <!-- Reduzido space-y-3 para space-y-2 -->
                                     <div class="border-b pb-2">
-                                        <span class="info-label">Meio de Solicitação Geral:</span>
+                                        <span class="info-label text-xs lg:text-sm">Meio de Solicitação Geral:</span>
                                         <!-- Cor alterada para text-link-blue -->
-                                        <p class="info-detail">E-mail (<a href="mailto:audiovisual.proext@ufpe.br" class="text-link-blue hover:underline">audiovisual.proext@ufpe.br</a>)</p>
+                                        <span class="info-detail text-xs lg:text-sm">E-mail (<a href="mailto:audiovisual.proext@ufpe.br" class="text-link-blue hover:underline">audiovisual.proext@ufpe.br</a>)</span>
                                     </div>
 
                                     <!-- Serviço 1 -->
@@ -533,12 +542,12 @@
                                         <p class="info-value font-semibold">Produção de vídeos institucionais, podcasts e outros conteúdos multimídia</p>
                                         <div class="grid grid-cols-2 mt-1">
                                             <div>
-                                                <span class="info-label">Complexidade:</span>
-                                                <p class="info-detail">Alta</p>
+                                                <span class="info-label text-xs lg:text-sm">Complexidade:</span>
+                                                <span class="info-detail text-xs lg:text-sm">Alta</span>
                                             </div>
                                             <div>
-                                                <span class="info-label">Prazo Estimado:</span>
-                                                <p class="info-detail">2 a 4 semanas</p>
+                                                <span class="info-label text-xs lg:text-sm">Prazo Estimado:</span>
+                                                <span class="info-detail text-xs lg:text-sm">2 a 4 semanas</span>
                                             </div>
                                         </div>
                                     </div>
@@ -548,12 +557,12 @@
                                         <p class="info-value font-semibold">Cobertura audiovisual de eventos</p>
                                         <div class="grid grid-cols-2 mt-1">
                                             <div>
-                                                <span class="info-label">Complexidade:</span>
-                                                <p class="info-detail">Média</p>
+                                                <span class="info-label text-xs lg:text-sm">Complexidade:</span>
+                                                <span class="info-detail text-xs lg:text-sm">Média</span>
                                             </div>
                                             <div>
-                                                <span class="info-label">Prazo Estimado:</span>
-                                                <p class="info-detail">1 a 2 semanas</p>
+                                                <span class="info-label text-xs lg:text-sm">Prazo Estimado:</span>
+                                                <spann class="info-detail text-xs lg:text-sm">1 a 2 semanas</spann>
                                             </div>
                                         </div>
                                     </div>
@@ -570,9 +579,9 @@
                                 </div>
                                 <div class="space-y-2"> <!-- Reduzido space-y-3 para space-y-2 -->
                                     <div class="border-b pb-2">
-                                        <span class="info-label">Meio de Solicitação Geral:</span>
+                                        <span class="info-label text-xs lg:text-sm">Meio de Solicitação Geral:</span>
                                         <!-- Cor alterada para text-link-blue -->
-                                        <p class="info-detail">E-mail (<a href="mailto:bureaudesign.proext@ufpe.br" class="text-link-blue hover:underline">bureaudesign.proext@ufpe.br</a>)</p>
+                                        <span class="info-detail text-xs lg:text-sm">E-mail (<a href="mailto:bureaudesign.proext@ufpe.br" class="text-link-blue hover:underline">bureaudesign.proext@ufpe.br</a>)</span>
                                     </div>
                                     
                                     <!-- Serviço 1 -->
@@ -580,12 +589,12 @@
                                         <p class="info-value font-semibold">Criação de identidade visual (marcas e campanhas)</p>
                                         <div class="grid grid-cols-2 mt-1">
                                             <div>
-                                                <span class="info-label">Complexidade:</span>
-                                                <p class="info-detail">Alta</p>
+                                                <span class="info-label text-xs lg:text-sm">Complexidade:</span>
+                                                <span class="info-detail text-xs lg:text-sm">Alta</span>
                                             </div>
                                             <div>
-                                                <span class="info-label">Prazo Estimado:</span>
-                                                <p class="info-detail">2 a 4 semanas</p>
+                                                <span class="info-label text-xs lg:text-sm">Prazo Estimado:</span>
+                                                <span class="info-detail text-xs lg:text-sm">2 a 4 semanas</span>
                                             </div>
                                         </div>
                                     </div>
@@ -595,12 +604,12 @@
                                         <p class="info-value font-semibold">Produção de materiais gráficos (cartazes, folders, banners)</p>
                                         <div class="grid grid-cols-2 mt-1">
                                             <div>
-                                                <span class="info-label">Complexidade:</span>
-                                                <p class="info-detail">Média</p>
+                                                <span class="info-label text-xs lg:text-sm">Complexidade:</span>
+                                                <span class="info-detail text-xs lg:text-sm">Média</span>
                                             </div>
                                             <div>
-                                                <span class="info-label">Prazo Estimado:</span>
-                                                <p class="info-detail">1 a 2 semanas</p>
+                                                <span class="info-label text-xs lg:text-sm">Prazo Estimado:</span>
+                                                <span class="info-detail text-xs lg:text-sm">1 a 2 semanas</span>
                                             </div>
                                         </div>
                                     </div>
@@ -610,12 +619,12 @@
                                         <p class="info-value font-semibold">Aplicação de templates em materiais de comunicação para o site e redes sociais</p>
                                         <div class="grid grid-cols-2 mt-1">
                                             <div>
-                                                <span class="info-label">Complexidade:</span>
-                                                <p class="info-detail">Baixa</p>
+                                                <span class="info-label text-xs lg:text-sm">Complexidade:</span>
+                                                <span class="info-detail text-xs lg:text-sm">Baixa</span>
                                             </div>
                                             <div>
-                                                <span class="info-label">Prazo Estimado:</span>
-                                                <p class="info-value">Até 3 dias úteis</p>
+                                                <span class="info-label text-xs lg:text-sm">Prazo Estimado:</span>
+                                                <span class="info-value text-xs lg:text-sm">Até 3 dias úteis</span>
                                             </div>
                                         </div>
                                     </div>
@@ -636,17 +645,17 @@
                                         <p class="info-value font-semibold">Elaboração de boletins informativos e artigos</p>
                                         <div class="grid grid-cols-2 mt-1">
                                             <div>
-                                                <span class="info-label">Complexidade:</span>
-                                                <p class="info-detail">Alta</p>
+                                                <span class="info-label text-xs lg:text-sm">Complexidade:</span>
+                                                <span class="info-detail text-xs lg:text-sm">Alta</span>
                                             </div>
                                             <div>
-                                                <span class="info-label">Prazo Estimado:</span>
-                                                <p class="info-detail">1 a 4 semanas</p>
+                                                <span class="info-label text-xs lg:text-sm">Prazo Estimado:</span>
+                                                <span class="info-detail text-xs lg:text-sm">1 a 4 semanas</span>
                                             </div>
                                         </div>
-                                        <span class="info-label mt-2">E-mail:</span>
+                                        <span class="info-label mt-2 text-sm">E-mail:</span>
                                         <!-- Cor alterada para text-link-blue -->
-                                        <p class="info-detail"><a href="mailto:comunicacao.proext@ufpe.br" class="text-link-blue hover:underline">comunicacao.proext@ufpe.br</a></p>
+                                        <p class="info-detail text-sm"><a href="mailto:comunicacao.proext@ufpe.br" class="text-link-blue hover:underline">comunicacao.proext@ufpe.br</a></p>
                                     </div>
                                     
                                     <!-- Serviço 2 -->
@@ -654,17 +663,17 @@
                                         <p class="info-value font-semibold">Coordenação editorial e publicação da revista Estudos Universitários</p>
                                         <div class="grid grid-cols-2 mt-1">
                                             <div>
-                                                <span class="info-label">Complexidade:</span>
-                                                <p class="info-detail">Alta</p>
+                                                <span class="info-label text-xs lg:text-sm">Complexidade:</span>
+                                                <span class="info-detail text-xs lg:text-sm">Alta</span>
                                             </div>
                                             <div>
-                                                <span class="info-label">Prazo Estimado:</span>
-                                                <p class="info-detail">Conforme cronograma da publicação</p>
+                                                <span class="info-label text-xs lg:text-sm">Prazo Estimado:</span>
+                                                <span class="info-detail text-xs lg:text-sm">Conforme cronograma da publicação</span>
                                             </div>
                                         </div>
-                                        <span class="info-label mt-2">E-mail:</span>
+                                        <span class="info-label mt-2 text-sm">E-mail:</span>
                                         <!-- Cor alterada para text-link-blue -->
-                                        <p class="info-detail"><a href="mailto:estudosuniversitarios@ufpe.br" class="text-link-blue hover:underline">estudosuniversitarios@ufpe.br</a></p>
+                                        <p class="info-detail text-sm"><a href="mailto:estudosuniversitarios@ufpe.br" class="text-link-blue hover:underline">estudosuniversitarios@ufpe.br</a></p>
                                     </div>
                                     
                                     <!-- Serviço 3 -->
@@ -672,17 +681,17 @@
                                         <p class="info-value font-semibold">Revisão e edição de textos institucionais</p>
                                         <div class="grid grid-cols-2 mt-1">
                                             <div>
-                                                <span class="info-label">Complexidade:</span>
-                                                <p class="info-detail">Média</p>
+                                                <span class="info-label text-xs lg:text-sm">Complexidade:</span>
+                                                <span class="info-detail text-xs lg:text-sm">Média</span>
                                             </div>
                                             <div>
-                                                <span class="info-label">Prazo Estimado:</span>
-                                                <p class="info-detail">Até 3 dias úteis</p>
+                                                <span class="info-label text-xs lg:text-sm">Prazo Estimado:</span>
+                                                <span class="info-detail text-xs lg:text-sm">Até 3 dias úteis</span>
                                             </div>
                                         </div>
-                                        <span class="info-label mt-2">E-mail:</span>
+                                        <span class="info-label mt-2 text-xs lg:text-sm">E-mail:</span>
                                         <!-- Cor alterada para text-link-blue -->
-                                        <p class="info-detail"><a href="mailto:bureaueditorial.proext@ufpe.br" class="text-link-blue hover:underline">bureaueditorial.proext@ufpe.br</a></p>
+                                        <span class="info-detail text-xs lg:text-sm"><a href="mailto:bureaueditorial.proext@ufpe.br" class="text-link-blue hover:underline">bureaueditorial.proext@ufpe.br</a></span>
                                     </div>
                                 </div>
                             </div>
@@ -703,14 +712,14 @@
                 <!-- OBSERVAÇÕES FINAIS -->
                 <!-- Reduzido mt-10 para mt-6 para menor espaçamento -->
                 <div class="mt-6 p-6 bg-gray-50 rounded-lg border border-gray-200 max-w-4xl mx-auto">
-                    <h5 class="text-lg font-bold text-ufpe-red mb-3 flex items-center">
+                    <h5 class="text-base lg:text-xl font-bold text-ufpe-red mb-3 flex items-center">
                         <i data-lucide="alert-triangle" class="w-5 h-5 mr-2"></i> Observações sobre Prioridade e Atendimento
                     </h5>
                     <ul class="list-disc list-inside space-y-1 text-sm text-gray-700 ml-4">
-                        <li>A prioridade de inserção das demandas seguirá a ordem decrescente de complexidade (alta, média, baixa) e, em seguida, a prioridade por Gabinete, Diretorias, Coordenações, Setoriais e Ações de Extensão.</li>
-                        <li>As demandas solicitadas não garantem atendimento imediato ou total. A equipe avaliará a viabilidade e, caso necessário, poderá atender parcialmente.</li>
-                        <li>Pedidos que não estejam na agenda de comunicação serão colocados em cadastro reserva ou poderão substituir um projeto já listado.</li>
-                        <li>Para mais informações, entre em contato pelo e-mail: <a href="mailto:comunicacao.proext@ufpe.br" class="text-link-blue hover:underline font-medium">comunicacao.proext@ufpe.br</a>.</li>
+                        <li class="text-xs lg:text-smi" >A prioridade de inserção das demandas seguirá a ordem decrescente de complexidade (alta, média, baixa) e, em seguida, a prioridade por Gabinete, Diretorias, Coordenações, Setoriais e Ações de Extensão.</li>
+                        <li class="text-xs lg:text-smi">As demandas solicitadas não garantem atendimento imediato ou total. A equipe avaliará a viabilidade e, caso necessário, poderá atender parcialmente.</li>
+                        <li class="text-xs lg:text-smi">Pedidos que não estejam na agenda de comunicação serão colocados em cadastro reserva ou poderão substituir um projeto já listado.</li>
+                        <li class="text-xs lg:text-smi">Para mais informações, entre em contato pelo e-mail: <a href="mailto:comunicacao.proext@ufpe.br" class="text-link-blue hover:underline font-medium">comunicacao.proext@ufpe.br</a>.</li>
                     </ul>
                 </div>
 
@@ -725,10 +734,12 @@
             
             <!-- Título Principal -->
             <div class="text-center mb-10 md:mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-2 font-display">
+                <!-- AJUSTE: Reduzindo h2 de 4xl para 3xl no mobile -->
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 font-display">
                     Nossos Projetos
                 </h2>
-                <p class="text-lg text-gray-600 max-w-4xl mx-auto">
+                <!-- AJUSTE: Reduzindo o parágrafo de text-lg para text-base no mobile -->
+                <p class="text-sm sm:text-lg text-gray-600 max-w-4xl mx-auto">
                     Conheça alguns dos trabalhos desenvolvidos pela nossa equipe
                 </p>
             </div>
@@ -752,17 +763,22 @@
                 <div class="flex-grow">
                     
                     <!-- Filtros (Chips/Botões) -->
-                    <div id="filter-buttons" class="flex flex-wrap gap-3 mb-10">
-                        <button data-filter="TODOS" class="filter-button active bg-ufpe-red text-white px-6 py-2 rounded-full font-medium transition-colors shadow-md">
+                    <!-- AJUSTE: Aplicando flex-nowrap, overflow-x-auto e gap-2 para forçar botões a ficarem lado a lado no mobile -->
+                    <div id="filter-buttons" class="flex flex-nowrap overflow-x-auto gap-2 mb-8 pb-2 hide-scrollbar">
+                        <!-- AJUSTE: Reduzindo o padding de px-6 para px-4 e usando text-sm para caber melhor -->
+                        <button data-filter="TODOS" class="filter-button active bg-ufpe-red text-white px-4 py-2 rounded-full text-xs lg:text-sm font-medium transition-colors shadow-md whitespace-nowrap shrink-0">
                             TODOS
                         </button>
-                        <button data-filter="DESIGN" class="filter-button bg-gray-300 text-cinza_escuro px-6 py-2 rounded-full font-medium hover:bg-gray-400 transition-colors">
+                        <!-- AJUSTE: Reduzindo o padding de px-6 para px-4 e usando text-sm para caber melhor -->
+                        <button data-filter="DESIGN" class="filter-button bg-gray-300 text-cinza_escuro px-4 py-2 rounded-full text-xs lg:text-sm font-medium hover:bg-gray-400 transition-colors whitespace-nowrap shrink-0">
                             DESIGN
                         </button>
-                        <button data-filter="AUDIOVISUAL" class="filter-button bg-gray-300 text-cinza_escuro px-6 py-2 rounded-full font-medium hover:bg-gray-400 transition-colors">
+                        <!-- AJUSTE: Reduzindo o padding de px-6 para px-4 e usando text-sm para caber melhor -->
+                        <button data-filter="AUDIOVISUAL" class="filter-button bg-gray-300 text-cinza_escuro px-4 py-2 rounded-full text-xs lg:text-sm font-medium hover:bg-gray-400 transition-colors whitespace-nowrap shrink-0">
                             AUDIOVISUAL
                         </button>
-                        <button data-filter="EDITORIAL" class="filter-button bg-gray-300 text-cinza_escuro px-6 py-2 rounded-full font-medium hover:bg-gray-400 transition-colors">
+                        <!-- AJUSTE: Reduzindo o padding de px-6 para px-4 e usando text-sm para caber melhor -->
+                        <button data-filter="EDITORIAL" class="filter-button bg-gray-300 text-cinza_escuro px-4 py-2 rounded-full text-xs lg:text-sm font-medium hover:bg-gray-400 transition-colors whitespace-nowrap shrink-0">
                             EDITORIAL
                         </button>
                     </div>
@@ -790,10 +806,12 @@
             
             <!-- Título Principal -->
             <div class="text-center mb-10 md:mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-2 font-display">
+                <!-- AJUSTE: Reduzindo h2 de 4xl para 3xl no mobile -->
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 font-display">
                     Equipe
                 </h2>
-                <p class="text-lg text-gray-600 max-w-4xl mx-auto">
+                <!-- AJUSTE: Reduzindo o parágrafo de text-lg para text-base no mobile -->
+                <p class="text-sm sm:text-lg text-gray-600 max-w-4xl mx-auto">
                     Conheça o nosso <span class="text-ufpe-red"><b>time</b></span> dividido em 3 frentes de atuação
                 </p>
                 <div class="w-24 h-1 bg-ufpe-red mx-auto mt-6"></div>
@@ -812,10 +830,12 @@
             
             <!-- Título Principal -->
             <div class="text-center mb-10 md:mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-2 font-display">
+                <!-- AJUSTE: Reduzindo h2 de 4xl para 3xl no mobile -->
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 font-display">
                     Nossas Conexões
                 </h2>
-                <p class="text-lg text-gray-600 max-w-4xl mx-auto">
+                <!-- AJUSTE: Reduzindo o parágrafo de text-lg para text-base no mobile -->
+                <p class="text-sm sm:text-lg text-gray-600 max-w-4xl mx-auto">
                     Explore os projetos desenvolvidos pelo Bureau da UFPE em parceria com outras entidades.
                 </p>
                 <div class="w-24 h-1 bg-ufpe-red mx-auto mt-6"></div>
@@ -905,9 +925,9 @@
         // Dados de Mockup para Projetos (AJUSTADO para total de 47)
         const PROJECTS_DATA = [
             // 18x DESIGN - ADICIONADO imageUrl (Opcional)
-            { id: 1, title: "Mockup Ecomangue", category: "DESIGN", subcategory: "Identidade Visual", imageUrl: "assets/mockup-geral-ECOMANGUE.PNG" }, // Adicione o caminho da imagem aqui, ex: "assets/img_design_1.jpg"
-            { id: 4, title: "Mockup Pise", category: "DESIGN", subcategory: "Identidade Visual", imageUrl: "assets/mockup-geral-PISE.png" },
-            { id: 8, title: "Mockup LTM", category: "DESIGN", subcategory: "Identidade Visual", imageUrl: "assets/mockup-geral-LTM.png" },
+            { id: 1, title: "Ecomangue", category: "DESIGN", subcategory: "Identidade Visual", imageUrl: "assets/mockup-geral-ECOMANGUE.PNG" }, // Adicione o caminho da imagem aqui, ex: "assets/img_design_1.jpg"
+            { id: 4, title: "Pise", category: "DESIGN", subcategory: "Identidade Visual", imageUrl: "assets/mockup-geral-PISE.png" },
+            { id: 8, title: "LTM", category: "DESIGN", subcategory: "Identidade Visual", imageUrl: "assets/mockup-geral-LTM.png" },
             
             // 15x AUDIOVISUAL - ADICIONADO videoId (Exemplos do YouTube)
             // Substitua os videoId pelos códigos reais dos vídeos do Youtube (aquilo que vem depois de ?v=)
@@ -922,24 +942,24 @@
                 id: 5, 
                 title: "Viva a extensão", 
                 category: "AUDIOVISUAL", 
-                subcategory: "Série documental sobre Extensão na UFPE", 
-                videoId: "A3_BCbY_yPE" 
+                subcategory: "Série documental", 
+                videoId: "2uxVp6Ft2P4" 
             },
             { 
                 id: 7, 
                 title: "Extensão em ação ", 
                 category: "AUDIOVISUAL", 
-                subcategory: "Boletim semanal com notícias da Extensão", 
-                videoId: "1lShTpILhE4" 
+                subcategory: "Série documental", 
+                videoId: "A3_BCbY_yPE" 
             },
             { 
                 id: 10, 
                 title: "Curricularizacão", 
                 category: "AUDIOVISUAL", 
                 subcategory: "Como a extensão integra a formação dos estudantes.", 
-                videoId: "2uxVp6Ft2P4" 
+                videoId: "CN9N60x_Uo4" 
             },
-        
+            
             // 14x EDITORIAL
             { id: 3, title: "Boletim de Notícias", category: "EDITORIAL", subcategory: "Editorial", imageUrl:'assets/Mockup_Boletim-1920.png' },
             { id: 6, title: "Ebook", category: "EDITORIAL", subcategory: "Editorial", imageUrl:'assets/Mockup_Ebook-1920.png' },
@@ -1002,7 +1022,7 @@
                                  alt="Thumbnail do vídeo" 
                                  class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500"
                                  onerror="this.src='https://placehold.co/1280x720/000000/FFFFFF?text=Vídeo+Indisponível'" />
-                             
+                            
                             <!-- Overlay com ícone de Play -->
                             <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center group-hover:bg-black/30 transition-colors">
                                 <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300">
@@ -1298,6 +1318,7 @@
                         { name: "Nara Cavalcanti", role: "Coordenadora da CCI", photoUrl: "assets/fotos/nara.jpg" },
                         { name: "Demócrito da Silva", role: "Gestor de Mídias", photoUrl: "assets/Democrito.png" },
                         { name: "Vinicius Gabriel", role: "Estagiário de TI", photoUrl: "assets/fotos/vinicius.jpg" },
+                        { name: "Bruno Mateus", role: "Bolsista", photoUrl: "assets/fotos/vinicius.jpg" },
                     ]
                 },
                 {
@@ -1317,6 +1338,7 @@
                         { name: "Artur Villaça Franco", role: "Assistente editorial", photoUrl: "assets/fotos/artur.jpg" },
                         { name: "José Carlos", role: "Bolsista de Revisão", photoUrl: "assets/fotos/jose_carlos.jpg" },
                         { name: "Laura", role: "Revisora de Redação", photoUrl: "assets/fotos/laura.jpg" },
+                        { name: "Ana Clara", role: "Revisora de Redação", photoUrl: "assets/fotos/laura.jpg" },
                     ]
                 },
                 {
@@ -1346,9 +1368,9 @@
                 const gradientClass = colorClasses[color] || 'from-gray-600 to-gray-400';
                 
                 const avatarContent = (photoUrl && photoUrl !== 'assets/fotos/placeholder.jpg') 
-                    ? `<img src="${photoUrl}" alt="Foto de ${name}" class="team-avatar w-24 h-24 rounded-full mb-4 flex items-center justify-center text-white text-xl font-bold uppercase object-cover bord shadow-lg" onerror="this.onerror=null; this.classList.add('bg-gray-400', 'text-white', 'text-xl', 'font-bold'); this.style.backgroundColor = '#8B0000'; this.style.backgroundImage = 'none'; this.alt='Foto indisponível'; this.outerHTML = '<div class=\\'team-avatar w-24 h-24 rounded-full mb-4 flex items-center justify-center text-white text-xl font-bold uppercase bg-ufpe-red border-4 border-white shadow-lg\\'>${initials}</div>';" />`
+                    ? `<img src="${photoUrl}" alt="Foto de ${name}"  width="150" height="200" rounded-full mb-4 flex items-center justify-center text-white text-xl font-bold uppercase object-cover bord shadow-lg" onerror="this.onerror=null; this.classList.add('bg-gray-400', 'text-white', 'text-xl', 'font-bold'); this.style.backgroundColor = '#8B0000'; this.style.backgroundImage = 'none'; this.alt='Foto indisponível'; this.outerHTML = '<div class=\\'team-avatar w-24 h-24 rounded-full mb-4 flex items-center justify-center text-white text-xl font-bold uppercase bg-ufpe-red border-4 border-white shadow-lg\\'>${initials}</div>';" />`
                     : `
-                        <div class="team-avatar w-24 h-24 rounded-full mb-4 flex items-center justify-center text-white text-xl font-bold uppercase 
+                        <div  w-24 h-24 rounded-full mb-4 flex items-center justify-center text-white text-xl font-bold uppercase 
                             bg-gradient-to-br ${gradientClass} border-4 border-white shadow-lg">
                             ${initials}
                         </div>
@@ -1357,11 +1379,11 @@
                 const badgeColor = color; // Cor do texto do badge é a cor do Bureau
 
                 return `
-                    <div class="team-card p-4 bg-white rounded-xl shadow-lg border border-gray-200 text-center transition-all duration-300 transform hover:shadow-2xl hover:-translate-y-1">
+                    <div class="team-card p-5 bg-white rounded-xl mb-6   shadow-lg border border-gray-200 text-center transition-all duration-300 transform hover:shadow-2xl hover:-translate-y-1">
                         <div class="flex flex-col items-center">
                             ${avatarContent}
-                            <h4 class="text-xl font-bold text-gray-900 mb-2">${name}</h4>
-                            <span class="inline-block bg-gray-100 text-${badgeColor} text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
+                            <h4 class="text-base lg:text-xl font-bold text-gray-900 mb-2">${name}</h4>
+                            <span class="inline-block bg-gray-100 text-${badgeColor} text-[0.5rem] lg:text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
                                 ${role}
                             </span>
                         </div>
